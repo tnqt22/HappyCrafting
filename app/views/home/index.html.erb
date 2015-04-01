@@ -1,2 +1,27 @@
-<h1>Welcome!</h1>
-<%= link_to "login", login_path %>
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+<link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css"/>
+<link type="text/css" rel="stylesheet" href="application.css" />
+
+<title>Happy Crafting</title>
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+        <h1>Welcome!</h1>
+        <div><%= image_tag("girl.png",:width => 195, :height => 200) %></div>
+          <div class="btn-group-vertical">
+          	<div class="btn btn-lg btn-default"><%= link_to "Login", login_path %></div>
+          </div>
+      </div>    
+    </div>
+  </div>
+</body>
+
+</html>
