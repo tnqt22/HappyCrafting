@@ -1,2 +1,2 @@
-# happy-crafting
-A web app using Ruby on Rails framework
+# HappyCrafting
+A web app for crafters community developed using Ruby on Rails framework
