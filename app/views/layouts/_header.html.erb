@@ -7,8 +7,23 @@
     </ul>
       
     <ul class="nav navbar-nav navbar-right">
+        <!--
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        -->
+        <li><%= link_to "Sign Up", new_user_path %></li>
+        
+        <% if current_user %> 
+        <li style="text-color:#fff; font-size:25px;">
+        Logged in as <%= current_user.email %>
+        </li>
+        <%= link_to "Log Out", session_path("current"), method: "delete" %>
+        <% else %>
+  <li>
+    <%= link_to "Log in", new_session_path %>    
+  </li>
+<% end %>
+        
     </ul>
   </div>
 </header>

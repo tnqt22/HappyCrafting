@@ -1,3 +1,49 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.jumbotron {
+  background-image:url('bg.jpg');
+  height: 770px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: white;
+  font-size: 50px;  
+  font-family: 'Abril Fatface', cursive;
+  text-shadow: 4px 4px 4px #aaa;
+}
+
+.jumbotron p {
+  font-size: 16px;
+}
+
+.jumbotron form {
+  background:rgba(255,255,255,0.5);
+  font-size: 20px;
+  padding: 5%;
+  min-width: 50%;
+  margin-left: 20%;
+  margin-right: 20%;
+} 
+
+.jumbotron .bg-info {
+  background:rgba(253,252,239,0.9);
+  //background:rgba(251,245,182,0.8);
+  //background:rgba(136,235,255,0.8);
+  //background:rgba(253,155,255,0.5);
+  min-width:50%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 15px;
+}
