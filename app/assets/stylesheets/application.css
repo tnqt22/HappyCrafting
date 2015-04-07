@@ -13,13 +13,12 @@
  *= require_tree .
  *= require_self
  */
- 
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 .jumbotron {
-  background-image:url('bg.jpg');
+  background-image:url('cutebg.jpg');
   height: 770px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,3 +55,4 @@
   margin-left: 20%;
   margin-right: 20%;
 }
+
