@@ -1,6 +1,4 @@
-<h1>Sign Up</h1>
-<br>
-<br>
+<!--
 <%= form_for @user do |f| %>
   <% if @user.errors.any? %>
     <%= "Error in form" %>
@@ -19,3 +17,53 @@
   <%= f.password_field :password_confirmation %><br/>
   <%= f.submit %>
 <% end %>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>  
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Abril+Fatface">
+<link type="text/css" rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css"/>
+<link type="text/css" rel="stylesheet" href="application.css" />
+
+<title>Happy Crafting</title>
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+    <h1>Sign Up</h1>
+       <!--
+       <form action="login.asp">
+  			Username<br>
+            <input type="text" name="username"><br>
+  			Password<br>
+            <input type="text" name="password"><br>
+            <input type="submit" value="Log in" style="margin-top:10px;">
+		</form> 
+		-->
+		<%= form_for @user do |f| %>
+  <% if @user.errors.any? %>
+    <%= "Error in form" %>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li> 
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :email %><br/>
+  <%= f.text_field :email %><br/>
+  <%= f.label :password %><br/>
+  <%= f.password_field :password %><br/>
+  <%= f.label :password_confirmation %><br/>
+  <%= f.password_field :password_confirmation %><br/>
+  <%= f.submit %>
+<% end %>
+    </div>
+  </div>
+</body>
+
+</html>

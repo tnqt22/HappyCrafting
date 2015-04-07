@@ -14,7 +14,7 @@
  *= require_self
  */
  
-/*
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -56,4 +56,3 @@
   margin-left: 20%;
   margin-right: 20%;
 }
-*/
