@@ -2,10 +2,6 @@
 <html>
 <head>  
 
-<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Abril+Fatface">
-<link type="text/css" rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css"/>
-<link type="text/css" rel="stylesheet" href="application.css" />
-
 <title>Happy Crafting</title>
 
 </head>
@@ -14,15 +10,17 @@
   <div class="jumbotron">
     <div class="container text-center">
     <h1>Login</h1>
-       <form action="login.asp">
+      <form action="login.asp">
   			Username<br>
             <input type="text" name="username"><br>
   			Password<br>
             <input type="text" name="password"><br>
             <input type="submit" value="Log in" style="margin-top:10px;">
-		</form>   
+		  </form>   
         <p>Don't have an account yet?<br>
-        <a href="signup.html">Click here to create an account</a> </p>
+        <!--<a href="signup.html">Click here to create an account</a> -->
+        <%= link_to "Click here to create an account", new_user_path %>
+        </p>
     </div>
   </div>
 </body>
