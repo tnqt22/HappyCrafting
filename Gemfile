@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+
+gem 'thin'
 gem 'bcrypt',       '3.1.7'
 gem 'pg',          '0.17.1'
 gem 'rails',        '4.2.0'
