@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root 'home#index'
   
   get 'login' => "home#login"
+  get 'signup' => "home#signup"
+  get 'about' => "home#about"
+  get 'contact' => "home#contact"
   
   get 'index' => "home#login"
   get 'about' => "home#about"

@@ -9,8 +9,9 @@
 <body>
   <div class="jumbotron">
     <div class="container text-center">
-        <h1>Welcome!</h1>
-        <div><%= image_tag("girl.png",:width => 195, :height => 200) %></div>
+      <h1>Welcome!</h1>
+      <div><%= image_tag("girl.png",:width => 195, :height => 200) %></div>
+      <%= link_to "Join the Community", signup_path, class: "btn btn-lg btn-primary" %>
     </div>
   </div>
 </body>

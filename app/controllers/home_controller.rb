@@ -12,9 +12,10 @@ class HomeController < ApplicationController
     def help
     end
     
-    def login
-    end
-    
     def signup
     end
+    
+    def login
+    end
+
 end
