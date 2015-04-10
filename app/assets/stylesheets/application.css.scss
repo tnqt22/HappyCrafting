@@ -18,8 +18,9 @@
 @import "bootstrap";
 
 .jumbotron {
-  background-image:url('bg.jpg');
-  height: 770px;
+  /*background-image:url('bg.jpg');*/
+  background-color: #c4fff9;
+  height: 1000px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -30,7 +31,7 @@
 }
 
 .jumbotron h1 {
-  color: white;
+  color: black;
   font-size: 50px;  
   font-family: 'Abril Fatface', cursive;
   text-shadow: 4px 4px 4px #aaa;

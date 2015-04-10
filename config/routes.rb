@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'home#index'
   
   get 'login' => "home#login"
+  get 'signup' => "home#signup"
+  get 'about' => "home#about"
+  get 'contact' => "home#contact"
   
   
   # The priority is based upon order of creation: first created -> highest priority.
