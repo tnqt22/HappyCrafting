@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Happy Crafting</title>
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Tutorials</h1>
+      <div class="text-left">
+        <% @tutorials.each do |tutorial| %>    
+          <p><%= tutorial.user %></p>    
+          <ul>      
+            <li><%= tutorial.title  %></li>      
+            <li><%= tutorial.description %></li> 
+            <%= link_to 'Delete Tutorial', delete_tutorial_path(tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <br>
+            <%= link_to 'Edit Tutorial', edit_tutorial_path(tutorial.id), method: :edit, data: { confirm: 'Are you sure?' } %>
+          </ul>
+          <br>
+        <% end %>
+      </div>  
+      <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
+    </div>
+  </div>
+</body>
+
+</html>

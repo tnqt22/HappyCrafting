@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Happy Crafting</title>
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>New Tutorial</h1>
+      <%= form_for(@tutorial) do |v| %>  
+      <%= v.label :user %>  
+      <%= v.text_field :user %><br/>  
+      <%= v.label :title %>  
+      <%= v.text_field :title %><br/>  
+      <%= v.label :description %>  
+      <%= v.text_field :description %><br/>  
+      <%= v.submit %>
+      <% end %>
+    </div>
+  </div>
+</body>
+
+</html>

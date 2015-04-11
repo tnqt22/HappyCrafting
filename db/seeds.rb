@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Tutorial.create(user: "thao", title: "My tutorial 1", description: "how to make it")
+
+Tutorial.create(user: "thao", title: "My tutorial 2", description: "how to make it")
+
+Tutorial.create(user: "thao", title: "My tutorial 3", description: "how to make it")
