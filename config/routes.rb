@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
+  resources :users
+
   root 'home#index'
   
   #routes for home
   get 'login' => "home#login"
-  get 'signup' => "home#signup"
+  #get 'signup' => "home#signup"
   get 'about' => "home#about"
   get 'contact' => "home#contact"
   get 'help' => "home#help"
