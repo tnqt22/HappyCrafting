@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   
+  get 'sessions/new'
+
   resources :users
+  resources :sessions
 
   root 'home#index'
   
   #routes for home
-  get 'login' => "home#login"
+  #get 'login' => "home#login"
   #get 'signup' => "home#signup"
   get 'about' => "home#about"
   get 'contact' => "home#contact"
@@ -18,6 +21,10 @@ Rails.application.routes.draw do
   delete 'tutorials/:id' => 'tutorials#destroy' , as: :delete_tutorial
   get 'tutorials/:id/edit' => 'tutorials#edit', as: :edit_tutorial  
   post 'tutorials/:id' => 'tutorials#update', as: :update_tutorial
+  
+  get 'signup', to: 'users#new', as: :signup
+  get 'login', to: 'sessions#new', as: :login
+  get 'logout', to: 'sessions#destroy', as: :logout
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

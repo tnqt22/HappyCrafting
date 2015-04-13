@@ -1,5 +1,7 @@
 class TutorialsController < ApplicationController
     
+  before_filter :authorize, only: [:new,:edit] 
+  
   def index
     @tutorials = Tutorial.all
   end
