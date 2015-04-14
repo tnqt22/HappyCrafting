@@ -30,7 +30,7 @@ class TutorialsController < ApplicationController
   end  
 
   def update    
-    v = Tutorial.find(params[:id])        
-    v.update(user: params[:user], title: params[:title], title: params[:description])  
+    t = Tutorial.find(params[:id])        
+    t.update(user: params[:user], title: params[:title], title: params[:description])  
   end
 end

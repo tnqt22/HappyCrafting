@@ -1,11 +1,24 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
-<h1>Log In</h1>
+<!DOCTYPE html>
+<html>
+<head>
 
-<%= form_tag sessions_path do %>
-  <%= label_tag :email %><br/>
-  <%= text_field_tag :email, params[:email] %><br/>
-  <%= label_tag :password %><br/>
-  <%= password_field_tag :password %><br/>
-  <%= submit_tag "Log In" %>
-<% end %>
+<title>Happy Crafting</title>
+
+</head>
+
+<body>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Log In</h1>
+      <%= form_tag sessions_path do %>
+        <%= label_tag :email %><br/>
+        <%= text_field_tag :email, params[:email] %><br/>
+        <%= label_tag :password %><br/>
+        <%= password_field_tag :password %><br/>
+        <%= submit_tag "Log In" %>
+      <% end %>
+    </div>
+  </div>
+</body>
+
+</html>
