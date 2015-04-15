@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'about' => "home#about"
   get 'contact' => "home#contact"
   get 'help' => "home#help"
+  get 'credits' => "home#credits"
   
   #routes for tutorials
   get 'tutorials' => 'tutorials#index'

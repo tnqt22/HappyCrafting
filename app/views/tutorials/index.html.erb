@@ -12,16 +12,21 @@
       <h1>Tutorials</h1>
       <!--<p id="notice"><%= flash[:notice] %></p>-->
       <div class="text-left">
-        <% @tutorials.each do |tutorial| %>    
-          <p><%= tutorial.user %></p>    
-          <ul>      
-            <li><%= tutorial.title  %></li>      
-            <li><%= tutorial.description %></li> 
-            <%= link_to 'Delete Tutorial', delete_tutorial_path(tutorial.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-            <br>
-            <%= link_to 'Edit Tutorial', edit_tutorial_path(tutorial.id), method: :edit, data: { confirm: 'Are you sure?' } %>
-          </ul>
-          <br>
+        <% @tutorials.each do |tutorial| %>  
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="pull-right"><small> by <%= tutorial.user %></small></div>
+              <%= tutorial.title  %>
+            </div>
+            <div class="panel-body">
+              <%= tutorial.description %>
+              <div class="pull-right">
+                <%= link_to 'Edit', edit_tutorial_path(tutorial.id), method: :edit, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                <%= link_to 'Delete', delete_tutorial_path(tutorial.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+              </div>
+            </div>
+            
+          </div>
         <% end %>
       </div>  
       <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
