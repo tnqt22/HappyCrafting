@@ -13,4 +13,10 @@ class ApplicationController < ActionController::Base
   def authorize
     redirect_to login_path, alert: "Not authorized" if current_user.nil?
   end
+  
+  def correct_user
+    @user = Tutorial.find(params[:id]).user_id
+    flash[:notice] = "edit your own stuff man!"
+    redirect_to(root_url) unless @user == current_user
+  end
 end
