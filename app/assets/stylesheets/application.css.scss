@@ -19,9 +19,10 @@
 
 .jumbotron {
   background-image:url('https://cloud.githubusercontent.com/assets/8836789/7127010/7fd6587c-e20c-11e4-8042-60ad54722903.jpg');
-  height: 1000px;
+  height: 900px;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
 }
 
 .jumbotron .container {
@@ -86,4 +87,36 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+.dropdown {
+  font-size: 20px;
+  color: white;
+  margin-left: 30px;
+  margin-right: 35px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.myaccount {
+  color: white;
+}
+
+.bg-top {
+  background-image: url(https://cloud.githubusercontent.com/assets/8836789/7186868/aef60c30-e43a-11e4-8ad3-b6470cef0feb.png);
+  background-repeat: no-repeat;
+  padding-top: 50px;
+  min-height: 900px;
+  max-height: 900px;
+  background-size: 100% auto;
+  position: relative;
+}
+
+.bg-bottom {
+  background-image: url(https://cloud.githubusercontent.com/assets/8836789/7186893/d6e23c1e-e43a-11e4-94af-5ab1f53007d3.png);
+  background-repeat: no-repeat;
+  min-height: 900px;
+  max-height: 900px;
+  background-size: 100% auto;
+  position: relative;
 }

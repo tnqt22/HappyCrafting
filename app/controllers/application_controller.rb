@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   
   def correct_user
     @user = Tutorial.find(params[:id]).user_id
-    flash[:notice] = "edit your own stuff man!"
+    flash[:notice] = "Sorry, you are not authorized to edit this tutorial"
     redirect_to(root_url) unless @user == current_user
   end
 end

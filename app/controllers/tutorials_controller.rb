@@ -24,7 +24,8 @@ class TutorialsController < ApplicationController
   end
   
   def edit    
-    @tutorial = Tutorial.find(params[:id])   
+    @tutorial = Tutorial.find(params[:id]) 
+    #render text: "we're trying to edit"
   end  
 
   def update    

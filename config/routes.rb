@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new', as: :signup
   get 'login', to: 'sessions#new', as: :login
   get 'logout', to: 'sessions#destroy', as: :logout
+  get 'myaccount', to: 'sessions#info', as: :info
   
   get 'user/tutorials' => 'tutorials#show_user_tutorials', as:  :show_user_tutorials
   

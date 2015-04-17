@@ -7,10 +7,9 @@
 </head>
 
 <body>
-  <div class="jumbotron">
-    <div class="container text-center">
+  <div class="container text-center bg-top">
       <h1>Tutorials</h1>
-      <!--<p id="notice"><%= flash[:notice] %></p>-->
+      <p id="notice"><%= flash[:notice] %></p>
       <div class="text-left">
         <% @tutorials.each do |tutorial| %>  
           <div class="panel panel-default">
@@ -21,7 +20,7 @@
             <div class="panel-body">
               <%= tutorial.description %>
               <div class="pull-right">
-                <%= link_to 'Edit', edit_tutorial_path(tutorial.id), method: :edit, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                <%= link_to 'Edit', edit_tutorial_path(tutorial.id), method: :get, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
                 <%= link_to 'Delete', delete_tutorial_path(tutorial.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
               </div>
             </div>
@@ -30,8 +29,8 @@
         <% end %>
       </div>  
       <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
-    </div>
-  </div>
+      <!--missing a closing div-->
+    <div class="container bg-bottom"></div>
 </body>
 
 </html>
