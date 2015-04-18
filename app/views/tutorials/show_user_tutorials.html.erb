@@ -11,7 +11,7 @@
     <div class="container text-center">
       <h1>My Tutorials</h1>
       <div class="text-left">
-        <% @tutorials.each do |tutorial| %>  
+        <% @user_tutorials.each do |tutorial| %>  
           <div class="panel panel-default">
             <div class="panel-heading">
               <%= tutorial.title  %>
@@ -19,7 +19,7 @@
             <div class="panel-body">
               <%= tutorial.description %>
               <div class="pull-right">
-                <%= link_to 'Edit', edit_tutorial_path(tutorial.id), method: :edit, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                <%= link_to 'Edit', edit_tutorial_path(tutorial.id), method: :get, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
                 <%= link_to 'Delete', delete_tutorial_path(tutorial.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
               </div>
             </div>

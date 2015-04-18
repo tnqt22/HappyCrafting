@@ -2,7 +2,7 @@ class TutorialsController < ApplicationController
     
   #before_filter :authorize, only: [:new,:edit] 
   before_filter :authorize, only: [:new] 
-  before_filter :correct_user, only: [:edit]
+  before_filter :correct_user, only: [:edit, :update]
   
   def index
     @tutorials = Tutorial.all
@@ -31,6 +31,13 @@ class TutorialsController < ApplicationController
   def update    
     t = Tutorial.find(params[:id])        
     t.update(title: params[:title], title: params[:description])  
+    
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      # Handle a successful update.
+    else
+      render 'edit'
+    end
   end
   
   def show_user_tutorials

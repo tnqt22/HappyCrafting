@@ -7,7 +7,8 @@
 </head>
 
 <body>
-  <div class="container text-center bg-top">
+  <div class="jumbotron">
+    <div class="container text-center">
       <h1>Tutorials</h1>
       <p id="notice"><%= flash[:notice] %></p>
       <div class="text-left">
@@ -29,8 +30,8 @@
         <% end %>
       </div>  
       <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
-      <!--missing a closing div-->
-    <div class="container bg-bottom"></div>
+    </div>
+  </div>
 </body>
 
 </html>
