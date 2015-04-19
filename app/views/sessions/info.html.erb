@@ -12,7 +12,8 @@
       <h1>My Account</h1>
       <div class="text-left">
         <%= image_tag avatar_url(current_user) %>
-        Email: <%= current_user.email %>
+        <p>Name: <%= current_user.name %></p>
+        <p>Email: <%= current_user.email %></p>
       </div>  
     </div>
   </div>
