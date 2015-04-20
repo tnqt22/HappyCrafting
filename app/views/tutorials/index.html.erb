@@ -15,7 +15,7 @@
         <% @tutorials.each do |tutorial| %>  
           <div class="panel panel-default">
             <div class="panel-heading">
-              <!--<div class="pull-right"><small> by <%= tutorial.user %></small></div>-->
+              <div class="pull-right"><small> by <%= tutorial.user.name %></small></div>
               <%= tutorial.title  %>
             </div>
             <div class="panel-body">
