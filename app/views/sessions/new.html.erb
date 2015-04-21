@@ -10,18 +10,20 @@
   <div class="jumbotron">
     <div class="container text-center">
       <h1>Log In</h1>
+
       <p id="notice"><%= flash[:notice] %></p>
       <%= form_tag sessions_path do %>
         <%= label_tag :email %><br/>
         <%= text_field_tag :email, params[:email] %><br/>
         <%= label_tag :password %><br/>
-        <%= password_field_tag :password %><br/>
-        <%= submit_tag "Log In" , class: "btn btn-default" %>
+        <%= password_field_tag :password %><br/><br/>
+        <%= submit_tag "Log In" , class: "btn btn-primary" %>
       <% end %>
       <p>
       Don't have an account yet?<br>
       <%= link_to "Sign Up Now!", signup_path %>
       </p>
+
     </div>
   </div>
 </body>
