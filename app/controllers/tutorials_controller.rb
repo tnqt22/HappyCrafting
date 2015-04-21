@@ -6,10 +6,13 @@ class TutorialsController < ApplicationController
   
   #show searched tutorials (get)
   def index
+=begin
     @search = Tutorial.search do
       fulltext params[:search]
     end
     @tutorials = @search.results
+=end
+    @tutorials = Tutorial.all
   end
   
   #add tutorial (get)
