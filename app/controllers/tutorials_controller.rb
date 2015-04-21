@@ -36,17 +36,10 @@ class TutorialsController < ApplicationController
   end  
 
   #update tutorial (post)
-  def update    
-    t = Tutorial.find(params[:id])        
-    t.update(title: params[:title], title: params[:description])  
-    
-    @user = User.find(params[:id])
-    #need to be fixed user_params
-    if @user.update_attributes(user_params)
-      redirect_to tutorials_path, notice: "Tutorial updated!" 
-    else
-      render 'edit'
-    end
+  def update 
+    tutorial = Tutorial.find(params[:id])
+    tutorial.update(title: params[:title], description: params[:description])
+    redirect_to tutorials_path, notice: "Tutorial updated"
   end
   
   #show tutorial (get)
@@ -57,5 +50,10 @@ class TutorialsController < ApplicationController
       render new_session_path
     end
   end
+
+  private
+    def tutorial_params
+      params.require(:tutorial).permit(:title, :description)
+    end
 
 end
