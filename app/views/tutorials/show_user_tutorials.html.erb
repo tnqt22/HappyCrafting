@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Display all tutorials that belong to current user -->
 <html>
 <head>
 
@@ -7,9 +8,12 @@
 </head>
 
 <body>
-  <div class="jumbotron">
-    <div class="container text-center">
-      <h1>My Tutorials</h1>
+  <div class="bg-top">
+    <div class="container">
+        <div class="text-center">
+        <h1>My Tutorials</h1>
+        <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
+      </div>
       <div class="text-left">
         <% @user_tutorials.each do |tutorial| %>  
           <div class="panel panel-default">
@@ -27,7 +31,7 @@
           </div>
         <% end %>
       </div>  
-      <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
+      
     </div>
   </div>
 </body>

@@ -1,38 +1,47 @@
 class TutorialsController < ApplicationController
     
   #before_filter :authorize, only: [:new,:edit] 
-  before_filter :authorize, only: [:new] 
-  before_filter :correct_user, only: [:edit, :update, :destroy]
+  before_action :authorize, only: [:new, :edit, :update, :destroy] 
+  #before_action :correct_user, only: [:edit, :update, :destroy]
   
+  #show searched tutorials (get)
   def index
-    @tutorials = Tutorial.all
+    @search = Tutorial.search do
+      fulltext params[:search]
+    end
+    @tutorials = @search.results
   end
   
+  #add tutorial (get)
   def new
     @tutorial = Tutorial.new
   end
 
+  #add tutorial (post)
   def create
     user = User.find_by(id: session[:user_id])
     user.tutorials.create(params.require(:tutorial).permit(:title,:description))
     redirect_to tutorials_path , notice: "Tutorial added!"
   end
   
+  #delete tutorial
   def destroy    
     Tutorial.find(params[:id]).destroy        
     redirect_to tutorials_path , notice: "Tutorial destroyed!"  
   end
-  
+
+  #edit tutorial (get)
   def edit    
     @tutorial = Tutorial.find(params[:id]) 
-    #render text: "we're trying to edit"
   end  
 
+  #update tutorial (post)
   def update    
     t = Tutorial.find(params[:id])        
     t.update(title: params[:title], title: params[:description])  
     
     @user = User.find(params[:id])
+    #need to be fixed user_params
     if @user.update_attributes(user_params)
       redirect_to tutorials_path, notice: "Tutorial updated!" 
     else
@@ -40,6 +49,7 @@ class TutorialsController < ApplicationController
     end
   end
   
+  #show tutorial (get)
   def show_user_tutorials
     if session[:user_id]
       @user_tutorials = User.find(session[:user_id]).tutorials
@@ -47,4 +57,5 @@ class TutorialsController < ApplicationController
       render new_session_path
     end
   end
+
 end

@@ -19,9 +19,8 @@
 
 .jumbotron {
   background-image:url('https://cloud.githubusercontent.com/assets/8836789/7127010/7fd6587c-e20c-11e4-8042-60ad54722903.jpg');
-  height: 900px;
+  height: 800px;
   background-repeat: no-repeat;
-  background-attachment: fixed;
   background-size: cover;
   position: relative;
 }
@@ -59,37 +58,6 @@
 
 }
 
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer a {
-  color: #555;
-}
-
-footer a:hover {
-  color: #222;
-}
-
-footer small {
-  float: left;
-}
-
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
-}
-
 .dropdown {
   font-size: 20px;
   color: white;
@@ -122,6 +90,36 @@ footer ul li {
   position: relative;
 }
 
+/* footer */
+
+footer {
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
 /* sidebar */
 
 aside {
@@ -150,6 +148,7 @@ aside {
   }
 }
 
+/* gravatar */
 .gravatar {
   float: left;
   margin-right: 10px;
