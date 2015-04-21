@@ -7,40 +7,28 @@
 </head>
 
 <body>
-  <div class="bg-top">
+  <div class="jumbotron">
     <div class="container text-center">
-      <div class="text=center">
       <h1>Tutorials</h1>
-      
-      <!-- Search form -->
-      <p id="notice"><%= flash[:notice] %></p>
-
-      <%= form_tag tutorials_path, :method => :get do %>
-      <p>
-        <%= text_field_tag :search, params[:search] %> <%= submit_tag "Search!" %>
-      </p>
-      <% end %>
-
-      <!-- Add New Tutorial button -->
-      <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %> <br/><br/>
-    </div>
-
-      <!-- Display search result -->
       <div class="text-left">
-        <% @search.results.each do |result| %>  
+        <% @tutorials.each do |tutorial| %>  
           <div class="panel panel-default">
             <div class="panel-heading">
-              <div class="pull-right"><small> uploaded by <%= result.user.name %></small></div>
-              <%= result.title  %>
+              <div class="pull-right"><small> by <%= tutorial.user.name %></small></div>
+              <%= tutorial.title  %>
             </div>
             <div class="panel-body">
-              <%= result.description %>
+              <%= tutorial.description %>
+              <div class="pull-right">
+                <%= link_to 'Edit', edit_tutorial_path(tutorial.id), method: :get, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+                <%= link_to 'Delete', delete_tutorial_path(tutorial.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+              </div>
             </div>
             
           </div>
         <% end %>
-      </div>
-
+      </div>  
+      <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
     </div>
   </div>
 </body>
