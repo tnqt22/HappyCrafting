@@ -6,13 +6,18 @@ class TutorialsController < ApplicationController
   
   #show searched tutorials (get)
   def index
+    if params[:search]
+      @tutorials = Tutorial.search(params[:search]).order("created_at DESC")
+    else
+      @tutorials = Tutorial.all.order('created_at DESC')
+    end
 =begin
+  #for sunspot
     @search = Tutorial.search do
       fulltext params[:search]
     end
     @tutorials = @search.results
 =end
-    @tutorials = Tutorial.all
   end
   
   #add tutorial (get)

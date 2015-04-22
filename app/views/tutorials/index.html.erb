@@ -7,8 +7,39 @@
 </head>
 
 <body>
-  <div class="jumbotron">
+  <div class="bg-top">
     <div class="container text-center">
+
+      <h1>Tutorials</h1>
+      <div>
+      <%= form_tag(tutorials_path, :method => "get") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Tutorials", id: "search-box" %>
+        <%= submit_tag "Search", :name => nil, id: "search-btn" %>
+      <% end %>
+    </div>
+
+
+      <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
+      <br/><br/>
+
+      <div class="text-left">
+        <% @tutorials.each do |tutorial| %>  
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="pull-right"><small> by <%= tutorial.user.name %></small></div>
+              <%= tutorial.title  %>
+            </div>
+            <div class="panel-body">
+              <%= tutorial.description %>
+            </div>
+            
+          </div>
+        <% end %>
+      </div>  
+      
+
+
+      <!--
       <h1>Tutorials</h1>
       <div class="text-left">
         <% @tutorials.each do |tutorial| %>  
@@ -29,6 +60,7 @@
         <% end %>
       </div>  
       <%= link_to "Add New Tutorial", new_tutorial_path, class: "btn btn-info" %>
+    -->
     </div>
   </div>
 </body>
