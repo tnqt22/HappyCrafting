@@ -9,27 +9,32 @@
 <body>
   <div class="jumbotron">
     <div class="container text-center">
-      <h1>Sign Up</h1>
-      <%= form_for @user do |f| %>
-        <% if @user.errors.any? %>
-          <%= "Error in form" %>
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li> 
-            <% end %>
-          </ul>
+      <h1>Sign Up</h1> 
+      <div class="login-form">     
+        <%= form_for @user do |f| %>
+          <!--<% if @user.errors.any? %>
+            <%= "Error in form" %>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><%= message %></li> 
+              <% end %>
+            </ul>
+          <% end %>-->
+          
+          <div class="text-left">
+            <%= render 'shared/error_messages'%>
+          </div>
+          <%= f.label :name %><br/>
+          <%= f.text_field :name %><br/>
+          <%= f.label :email %><br/>
+          <%= f.email_field :email %><br/>
+          <%= f.label :password %><br/>
+          <%= f.password_field :password %><br/>
+          <%= f.label :password_confirmation %><br/>
+          <%= f.password_field :password_confirmation %><br/><br/>
+          <%= f.submit "Create my account", class: "btn btn-primary"%>
         <% end %>
-      
-        <%= f.label :name %><br/>
-        <%= f.text_field :name %><br/>
-        <%= f.label :email %><br/>
-        <%= f.email_field :email %><br/>
-        <%= f.label :password %><br/>
-        <%= f.password_field :password %><br/>
-        <%= f.label :password_confirmation %><br/>
-        <%= f.password_field :password_confirmation %><br/><br/>
-        <%= f.submit "Create my account", class: "btn btn-primary"%>
-      <% end %>
+      </div>
     </div>
   </div>
 </body>
