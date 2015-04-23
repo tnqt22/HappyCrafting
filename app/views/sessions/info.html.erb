@@ -10,13 +10,15 @@
   <div class="jumbotron">
     <div class="container text-center">
       <h1>My Account</h1>
+      <div class="login-form">
       <div class="text-left row">
-        <div class="col-md-2"><%= image_tag avatar_url(current_user), :size => "150x150" %></div>
-        <div class="col-md-3">
-          Name: <%= current_user.name %> <br/>
-          Email: <%= current_user.email %>
+        <div class="col-md-4"><%= image_tag avatar_url(current_user), :size => "150x150" %></div>
+        <div class="col-md-4">
+          <strong>Name:</strong> <br/> <%= current_user.name %> <br/>
+          <strong>Email:</strong> <br/> <%= current_user.email %>
         </div>
       </div>  
+    </div>
     </div>
   </div>
 </body>
